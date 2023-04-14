@@ -53,12 +53,13 @@ const getAppliedInternship = ()=>{
 useEffect(()=>{
   const verifyUser = async()=>{
     if(!cookies.jwt){
-      
+      console.log("cookies", cookies.jwt)
       navigate('/login')
     }else{
       const {data} = await axios.post(process.env.REACT_APP_SERVER_URL + `student`,{},{withCredentials:true}) 
       if(data.id !== id || data.status !== true){
         // removeCookie("jwt")
+        console.log("2nd")
         navigate('/login')
       }else{
         setIsPageLoading(true)
