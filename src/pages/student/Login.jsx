@@ -44,7 +44,8 @@ const Login = ({theme, setTheme}) => {
       { 
         ...user
       },{
-        withCredentials:true
+        withCredentials:true,
+        crossDomain: true
       })
       .then( ({data}) => {
         if(data.errors){
