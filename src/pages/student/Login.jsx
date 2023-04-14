@@ -55,8 +55,10 @@ const Login = ({theme, setTheme}) => {
         }
         else  if(data.usertype === "student" && data.verified === false){
           navigate(`/student/${data.id}/detailsone`);
+          console.log("LOGIN --> DETAILS ONE")
         }else if(data.usertype === "student" && data.verified === true){
           navigate(`/student/${data.id}/internships`);
+          console.log("LOGIN --> INTERNSHIPS")
         }else if(data.usertype === "company" && data.verified === false){
           navigate(`/company/${data.id}/detailsone`);
         }

@@ -165,11 +165,13 @@ const DetailsOne = ({theme, setTheme}) => {
     
     const verifyUser = async()=>{
       if(!cookies.jwt){
+        console.log("DETAILS ONE --> LOGIN")
         navigate('/login')
       }else{
         const {data} = await axios.post(process.env.REACT_APP_SERVER_URL + `student`,{},{withCredentials:true}) 
         if(data.id !== id || data.status !== true){
           // removeCookie("jwt")
+          console.log("DETAILS ONE 2 --> LOGIN")
           navigate('/login')
         }else{
           getUserDetails()
